@@ -6,9 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="icon" type="image/x-icon" href="Images/bitcoin-favicon.svg" />
-    <link rel="stylesheet" href="css\styles.css" />
+    <link rel="stylesheet" href="css/srtyle.css" />
   </head>
 
   <body>
-    
+    <div class="header">
+      <h1>Hellp DApp v1.0</h1>
+    </div>
+
+    <div class="box">
+      <h3>Please enter a string:</h3>
+      <input type="text" id="newInput">
+      <button type="button" id="set">Set</button>
+      <button type="button" id="get">Get</button>
+    </div>
+<hr><hr>
+    <!--Result-->
+    <div class="result" id="resultRow">Result: </div>
+<hr><hr>
+
+    <!--https://www.npmjs.com/package/@metamask/detect-provider-->
+    <script src="https://unpkg.com/@metamask/detect-provider/dist/detect-provider.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/app.js"></script>
   </body>
+  </html>
