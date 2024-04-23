@@ -23,9 +23,10 @@ async function connectWallet() {
         web3.eth.defaultAccount= currentAccount;
         console.log('Current Account: ',currentAccount);
         $('#current_account').text(currentAccount);
-    }).catch(function(err){
-        alert('Check the MetaMask has been installed and logged in!');
+    }).catch(function(err){ //use catch when something goes wrong
+        alert('Please ensure that you have installed and logged in to MetaMask!');
     });
+
     const provider= await detectEthereumProvider();
     if (provider) {
         //if a web3 instance is already provided by MetaMask
@@ -33,10 +34,32 @@ async function connectWallet() {
     } else {
         //specify default instance if no web3 instance provided
         web3provider= new Web3.providers.HttpProvider(url);
-        web3= new web3(web3provider);
-
-        return bindEvents();
     }
+    
+    web3= new Web3(web3provider);
+    return initContrcat();
+}
+function initContrcat(){
+
+
+
+
+    return bindEvents;
+}
+
+//set events for all button on page
+function bindEvents(){
+    $(document).on('click','#current_account',connectWallet);
+    $(document).on('click','#set',sendValue);
+    $(document).on('click','#get',callValue);
+}
+
+function sendValue(){
+
+}
+
+function callValue(){
+
 }
 
 function handleAccountsChanged(){

@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express (); //we can access the property of express by app variable
 
-//make these paths as ano known path that all files in there can be called directly
+//make these paths as an known path that all files in there can be called directly
 app.use(express.static('src'));
 app.use(express.static('../contract/build/contracts'));
 
